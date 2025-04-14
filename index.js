@@ -5,7 +5,6 @@ import { SERVER_PORT, SERVER_HOST } from "./src/config/config.js";
 import predictionRouter from "./src/routes/prediction.routes.js";
 import handleError from "./src/middlewares/handleError.js";
 import handleError404 from "./src/middlewares/handleError404.js";
-import path from "node:path";
 
 const app = express();
 
@@ -19,10 +18,8 @@ app.use(
 app.use(express.json()); // Middleware para convertir el cuerpo de la solicitud en un Objeto JS
 app.use(morgan("dev"));
 
-//
+// Servimos las imágenes en el navegador
 app.use("/static/images", express.static("public/images"));
-//
-app.use("/modelo_tfjs", express.static(path.resolve("src/ia/modelo_tfjs")));
 
 // Ruta para predicciones
 app.use("/prediction", predictionRouter);

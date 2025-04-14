@@ -1,8 +1,7 @@
 import { Router } from "express";
-// import { CLASS_NAMES } from "../utils/constants.js";
 import { upload } from "../middlewares/uploadImage.js";
-// import { classifyAndSaveImage, saveImage } from "../ia/imageService.js";
-import fs from "node:fs";
+import { saveImage } from "../utils/saveImage.js";
+import { classifyImage } from "../ia/classifyImage.js";
 
 const router = Router();
 
@@ -11,18 +10,8 @@ router.post("/single", upload.single("image"), async (req, res, next) => {
     console.log(req.file);
 
     const imagePath = await saveImage(req.file);
-    // const { maxIdx, probabilities } = await classifyAndSaveImage(req.file);
 
-    // Preparar el form-data para FastAPI
-    const form = new FormData();
-    form.append("file", fs.createReadStream(imagePath));
-
-    // Enviar al backend de FastAPI
-    const response = await axios.post("http://localhost:8000/predict", form, {
-      headers: form.getHeaders(),
-    });
-
-    const { class_name, confidence } = response.data;
+    const { class_name, confidence } = await classifyImage(imagePath);
 
     console.log(
       `La enfermedad es: ${class_name} y su probabilidad es de: ${confidence}`
