@@ -9,3 +9,14 @@ export const DB = {
   host: process.env.DB_HOST,
   database: process.env.DB_DATABASE,
 };
+
+// CLOUDINARY
+export const CLOUDINARY = {
+  name: process.env.CLOUDINARY_CLOUD_NAME,
+  apiKey: process.env.CLOUDINARY_API_KEY,
+  apiSecret: process.env.CLOUDINARY_API_SECRET,
+  url: process.env.CLOUDINARY_URL,
+};
+
+// GÉMINI AI
+export const GEMINI_AI_API_KEY = process.env.GEMINI_AI_API_KEY;
