@@ -1,4 +1,4 @@
-import admin from "../config/firebase.js";
+import { admin } from "../config/firebase.js";
 
 export const deleteUserByUid = async (uid) => {
   try {
