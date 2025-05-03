@@ -12,6 +12,7 @@ const serviceAccountKeyObject = JSON.parse(serviceAccountKeyJSON);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccountKeyObject),
+  storageBucket: "",
 });
 
-export default admin;
+export { admin };
