@@ -8,16 +8,10 @@ const destImages = path.resolve("public/images");
 export const upload = multer({
   dest: destImages,
   fileFilter: (req, file, cb) => {
-    const filetypes = /jpeg|jpg|png|webp/;
-    const mimetype = filetypes.test(file.mimetype);
-    const extname = filetypes.test(
-      path.extname(file.originalname).toLowerCase()
-    );
-
-    if (mimetype && extname) {
+    // Aceptar cualquier archivo cuyo tipo MIME empiece con "image/"
+    if (file.mimetype.startsWith("image/")) {
       return cb(null, true);
     }
-
-    cb(new Error("El archivo debe ser una imagen válida (jpg, jpeg, png)"));
+    cb(new Error("Solo se permiten archivos de imagen"));
   },
 });

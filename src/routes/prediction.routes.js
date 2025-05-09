@@ -4,10 +4,6 @@ import PredictionController from "../controllers/prediction.controller.js";
 
 const router = Router();
 
-router.post(
-  "/single",
-  upload.single("image"),
-  PredictionController.makePrediction
-);
+router.post("/", upload.single("image"), PredictionController.makePrediction);
 
 export default router;

@@ -26,7 +26,7 @@ class UserController {
   static async register(req, res, next) {
     const { username, email, uid } = req.body;
     try {
-      // Valido los datos con
+      // Valido los datos con Zod
 
       const userData = await UserModel.register({
         username,
