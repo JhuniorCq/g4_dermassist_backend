@@ -5,6 +5,7 @@ import { SERVER_PORT, SERVER_HOST } from "./src/config/config.js";
 import userRouter from "./src/routes/user.routes.js";
 import predictionRouter from "./src/routes/prediction.routes.js";
 import diseaseRouter from "./src/routes/disease.routes.js";
+import clinicRouter from "./src/routes/clinic.routes.js";
 import handleError from "./src/middlewares/handleError.js";
 import handleError404 from "./src/middlewares/handleError404.js";
 
@@ -31,6 +32,9 @@ app.use("/prediction", predictionRouter);
 
 // Ruta para obtener info de la enfermedad con Gémini AI
 app.use("/disease", diseaseRouter);
+
+// Ruta para las clínicas aliadas
+app.use("/clinic", clinicRouter);
 
 // Manejo de un Error 404
 app.use(handleError404);

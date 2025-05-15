@@ -13,9 +13,9 @@ export const classifyImage = async (imagePath) => {
       headers: form.getHeaders(),
     });
 
-    const { class_name, confidence } = response.data;
+    const { class_name, confidence, timestamp } = response.data;
 
-    return { class_name, confidence };
+    return { class_name, confidence, timestamp };
   } catch (error) {
     console.error("Error al comunicarse con el backend de IA:", error.message);
     throw error;
