@@ -1,9 +1,8 @@
-/*
-DROP DATABASE IF EXISTS derm_assist;
-CREATE DATABASE derm_assist;
-*/
-USE derm_assist;
-/*
+DROP DATABASE IF EXISTS `derm-assist`;
+CREATE DATABASE `derm-assist`;
+
+USE `derm-assist`;
+
 CREATE TABLE user (
 	user_id VARCHAR(255) PRIMARY KEY NOT NULL,
     user_name VARCHAR(255) NOT NULL,
@@ -42,8 +41,8 @@ INSERT INTO clinic (name, description, address, image_url, cell_phone, doctor_na
 ('SkinCare Plus', 'Clínica dermatológica moderna enfocada en salud y estética.', 'Jr. Piura 150, Piura', 'https://www.clinicadelapiel.com/wp-content/uploads/2023/07/Sede-LOS-OLIVOS-1-e1690952535138.png', '988123456', 'Dr. Andrés Quispe'),
 ('Clínica DermoSalud', 'Soluciones efectivas para problemas dermatológicos comunes y complejos.', 'Av. Javier Prado Este 2020, Lima', 'https://www.clinicadelapiel.com/wp-content/uploads/2023/07/Sede-LOS-OLIVOS-1-e1690952535138.png', '977889900', 'Dra. Cecilia Vargas'),
 ('Dermocenter Andino', 'Atención dermatológica especializada con enfoque integral y ético.', 'Calle Bolívar 45, Huancayo', 'https://www.clinicadelapiel.com/wp-content/uploads/2023/07/Sede-LOS-OLIVOS-1-e1690952535138.png', '944332211', 'Dr. Jorge Salazar');
-*/
 
+/*
 SELECT * FROM user;
 
 SELECT 
@@ -56,5 +55,4 @@ u.user_id,
     p.image_url
 FROM user u
 INNER JOIN prediction p ON u.user_id = p.user_id;
-
--- SELECT * FROM prediction WHERE user_id = "OQWMlOxrYbbC64iy5ZaUDXKGl9d2";
+*/

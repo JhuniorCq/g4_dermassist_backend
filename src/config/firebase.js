@@ -1,5 +1,6 @@
 import admin from "firebase-admin";
 import fs from "node:fs/promises";
+import path from "node:path";
 
 const serviceAccountKeyPath = path.resolve(
   "src",
