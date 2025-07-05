@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import axios from "axios";
 import FormDataPkg from "form-data";
-import { SERVER_IA } from "../config/config";
+import { SERVER_IA } from "../config/config.js";
 
 const FormData = FormDataPkg;
 
