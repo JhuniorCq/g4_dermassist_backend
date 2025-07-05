@@ -21,9 +21,6 @@ app.use(
 app.use(express.json()); // Middleware para convertir el cuerpo de la solicitud en un Objeto JS
 app.use(morgan("dev"));
 
-// Servimos las imágenes en el navegador
-// app.use("/prediction/images", express.static("public/images"));
-
 // Ruta para el registro
 app.use("/user", userRouter);
 
