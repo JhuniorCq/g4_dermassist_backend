@@ -8,7 +8,7 @@ class DiseaseController {
       const { disease } = req.body;
 
       const response = await askDermAssist(
-        `Dame información sobre esta enfermedad: ${disease}`
+        `Proporcióname una descripción breve (máximo 4 líneas) sobre la enfermedad dermatológica: ${disease}. Incluye causas comunes, síntomas principales y tratamiento general.`
       );
 
       res.json(
