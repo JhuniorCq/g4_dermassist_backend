@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import axios from "axios";
 import FormDataPkg from "form-data";
+import { SERVER_IA } from "../config/config";
 
 const FormData = FormDataPkg;
 
@@ -9,7 +10,7 @@ export const classifyImage = async (imagePath) => {
     const form = new FormData();
     form.append("file", fs.createReadStream(imagePath));
 
-    const response = await axios.post("http://localhost:8000/predict", form, {
+    const response = await axios.post(`${SERVER_IA}/predict`, form, {
       headers: form.getHeaders(),
     });
 

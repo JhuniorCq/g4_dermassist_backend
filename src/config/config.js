@@ -1,6 +1,8 @@
 export const SERVER_PORT = process.env.SERVER_PORT ?? 3001;
 export const SERVER_HOST = `http://localhost:${SERVER_PORT}`;
 
+export const SERVER_IA = process.env.SERVER_IA ?? "http://localhost:8000";
+
 // BASE DE DAOTS
 export const DB = {
   user: process.env.DB_USER,
